@@ -88,10 +88,5 @@ describe('testing form from Portnov school', () => {
    cy.get('.redFont').contains('Please enter your City')
 })
 
-   //Заполнение последнего обязательного поля
 
-it('Зевершение формы и отправка', () => {
-cy.get("input[name='refferedBy']").click().type('Barack Obama')
-      
-})
 })
