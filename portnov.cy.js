@@ -12,7 +12,7 @@ describe('testing form from Portnov school', () => {
         cy.get("input[name='firstName']").click().type('Dmitrii')
         cy.get("input[name='lastName']").click().type('Doronin1$3%ddddddddddddddddddd1')
         cy.get("input[name='address']").click().type('Sunset Boulavard, 245, 1144444444+++++-66ddddd;;;;')
-        
+        cy.get("input[name='city']").click().type('Paris, 245, 1144444444+++++-66ddddd;;;;')
         cy.get("input[name='email']").click().type('oranjeviyyashek@gmail.com')
         cy.get("input[name='zip']").click().type('94085')
         cy.get('select.middleEdit1').select('IL')
@@ -30,11 +30,11 @@ describe('testing form from Portnov school', () => {
         })
 
    //возвращение к заполнению данных
-     
+
    it('возвращение', () => {
         cy.go('back')
-
-        cy.contains('Please enter your City').should('not.exist')
+//проверка на осутствие сообщения о незаполненом поле 'City'
+        cy.contains('* Please enter your City').should('not.exist')
     })
       
      
@@ -92,4 +92,4 @@ describe('testing form from Portnov school', () => {
 })
 
 
-}) 
+})
